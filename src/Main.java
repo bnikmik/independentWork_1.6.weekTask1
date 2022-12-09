@@ -1,13 +1,15 @@
 public class Main {
     private static void editScript(String[] roles, String[] textLines) {
         StringBuilder script = new StringBuilder();
-        for (int i = 0; i < roles.length; i++) {
-            script.append(roles[i] + ":\n");
+        for (String role : roles) {
+            script.append(role)
+                    .append(":\n");
             for (int j = 0; j < textLines.length; j++) {
-                if (textLines[j].startsWith(roles[i])) {
-                    script.append((j + 1) + ") ");
-                    script.append(textLines[j].substring(roles[i].length() + 2));
-                    script.append("\n");
+                if (textLines[j].startsWith(role)) {
+                    script.append(j + 1)
+                            .append(") ")
+                            .append(textLines[j].substring(role.length() + 2))
+                            .append("\n");
                 }
             }
             script.append("\n");
